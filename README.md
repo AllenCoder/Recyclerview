@@ -7,9 +7,10 @@
 不多说，直接上代码
 		
 ```java
-     int positon ="你指定滚动的位置";
-     layoutManager.scrollToPositionWithOffset(positon,0);
-     layoutManager.setStackFromEnd(true);
+
+ int positon ="你指定滚动的位置";
+ layoutManager.scrollToPositionWithOffset(positon,0);
+ layoutManager.setStackFromEnd(true);
 
 ```
 		
