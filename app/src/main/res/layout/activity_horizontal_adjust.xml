@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="三等分"
+        android:gravity="center"
+        android:textColor="@android:color/holo_blue_light"
+        android:layout_height="30dp"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:text="五等分"
+        android:gravity="center"
+        android:layout_marginTop="60dp"
+        android:textColor="@android:color/holo_blue_light"
+        android:layout_height="30dp"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:text="七等分"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:textColor="@android:color/holo_blue_light"
+        android:layout_height="30dp"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
+
+</LinearLayout>
