@@ -6,12 +6,12 @@
 但是，利用LinearLayoutManager,可以很方便的实现这一点。
 不多说，直接上代码
 		
-	```java
-	     int positon ="你指定滚动的位置";
-	     layoutManager.scrollToPositionWithOffset(positon,0);
-	     layoutManager.setStackFromEnd(true);
-	
-	```
+```java
+     int positon ="你指定滚动的位置";
+     layoutManager.scrollToPositionWithOffset(positon,0);
+     layoutManager.setStackFromEnd(true);
+
+```
 		
 	![演示动画](./gif/sample1.gif)
 	
