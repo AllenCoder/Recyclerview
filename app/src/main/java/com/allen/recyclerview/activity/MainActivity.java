@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private HomeAdapter homeAdapter;
     private List<Home> activityList;
     private String[] activityTitle = {"RecyclerView 滚动定位", "水平调整布局", "垂直调整布局"};
-    private Class<?>[] ACTIVITY = {RecyclerClickItemActivity.class, A.class, VerticalAdjustActivity.class};
+    private Class<?>[] ACTIVITY = {RecyclerClickItemActivity.class, HorizontalAdjustActivity.class, VerticalAdjustActivity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

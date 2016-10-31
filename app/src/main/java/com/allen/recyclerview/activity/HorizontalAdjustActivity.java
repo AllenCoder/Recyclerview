@@ -12,7 +12,7 @@ import com.allen.recyclerview.adapter.HorizationAdapter;
 /**
  * create by AllenCoder
  */
-public class A extends Activity {
+public class HorizontalAdjustActivity extends Activity {
 
     private HorizationAdapter horizationAdapter;
     private LinearLayoutManager layoutManager1;
