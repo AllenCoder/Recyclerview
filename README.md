@@ -2,9 +2,9 @@
 
 ##1. RecyclerView滚动定位
 
-		经常在开发中，需要将Recyclerview滑动到某个位置，然后定位这一个具体项，将他显示到顶部，用RecyclerView的默认移动的方法并不能实现这一点
-		但是，利用LinearLayoutManager,可以很方便的实现这一点。
-		不多说，直接上代码
+经常在开发中，需要将Recyclerview滑动到某个位置，然后定位这一个具体项，将他显示到顶部，用RecyclerView的默认移动的方法并不能实现这一点
+但是，利用LinearLayoutManager,可以很方便的实现这一点。
+不多说，直接上代码
 		
 	```java
 	     int positon ="你指定滚动的位置";
@@ -15,11 +15,7 @@
 		
 	![演示动画](./gif/sample1.gif)
 	
-	```java
-	//position 你要指定的滚动位置
-	 layoutManager.scrollToPositionWithOffset(postion,0);
-	 layoutManager.setStackFromEnd(true);
-	```
+	
 
 ##2. Recyclerview 动态调整View的宽高 
 
@@ -59,5 +55,6 @@ public class HorizationAdapter extends BaseQuickAdapter<News,BaseViewHolder> {
 }
 
 ```
-效果图：
+
+    最终效果图：
 ![效果图](./gif/divide.gif)
