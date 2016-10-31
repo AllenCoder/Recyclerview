@@ -13,7 +13,7 @@
 
 ```
 		
-	![演示动画](./gif/sample1.gif)
+![演示动画](./gif/sample1.gif)
 	
 	
 
