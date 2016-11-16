@@ -18,6 +18,10 @@
         <activity android:name=".activity.RecyclerClickItemActivity"/>
         <activity android:name=".activity.VerticalAdjustActivity"/>
         <activity android:name=".activity.HorizontalAdjustActivity"/>
+        <activity android:name=".activity.ListActivity">
+        </activity>
+        <activity android:name=".activity.CustomView">
+        </activity>
     </application>
 
 </manifest>
