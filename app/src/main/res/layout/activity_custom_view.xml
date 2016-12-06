@@ -13,12 +13,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <com.allen.recyclerview.component.CanvasView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="60dp"
         android:background="#ccc"
         android:paddingBottom="40dp"
         android:paddingLeft="20dp"
         app:exampleColor="#33b5e5"
         app:exampleDimension="24sp"
+        android:id="@+id/candleView"
         app:exampleDrawable="@android:drawable/ic_menu_add"
         app:exampleString="Hello, CanvasView"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/test"
+        android:text="我是测试"
+        android:gravity="center"
+        android:textSize="50sp"
+        android:layout_below="@+id/candleView"
+        android:layout_height="match_parent"/>
 </RelativeLayout>

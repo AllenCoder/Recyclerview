@@ -4,8 +4,8 @@
 **                 (c) Copyright 2015, Allen, china, shanghai
 **                          All Rights Reserved
 **
-**                          
-**                         
+**
+**
 **-----------------------------------版本信息------------------------------------
 ** 版    本: V0.1
 **
@@ -25,4 +25,11 @@ import android.app.Application;
  * 修改备注：
  */
 public class MainApplication extends Application {
+
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        com.wanjian.sak.LayoutManager.init(this);
+    }
 }
