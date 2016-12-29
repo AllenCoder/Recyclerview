@@ -58,6 +58,10 @@ public class DataServer {
         list.add(news);
         news = new News("汽车");
         list.add(news);
+        for (int i = 0; i < 1000; i++) {
+            news = new News("汽车"+i);
+            list.add(news);
+        }
         return list;
     }
 

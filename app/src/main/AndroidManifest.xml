@@ -25,6 +25,8 @@
         </activity>
         <activity android:name=".activity.CustomView">
         </activity>
+        <activity android:name=".activity.GooglePlayActivity">
+        </activity>
     </application>
 
 </manifest>

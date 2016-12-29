@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
     protected RelativeLayout activityMain;
     private HomeAdapter homeAdapter;
     private List<Home> activityList;
-    private String[] activityTitle = {"RecyclerView 滚动定位", "水平调整布局", "垂直调整布局","Listview对比测试","自定义View测试"};
-    private Class<?>[] ACTIVITY = {RecyclerClickItemActivity.class, HorizontalAdjustActivity.class, VerticalAdjustActivity.class,ListActivity.class,CustomView.class};
+    private String[] activityTitle = {"RecyclerView 滚动定位", "水平调整布局", "垂直调整布局","Listview对比测试","自定义View测试","GooglePlay Demo"};
+    private Class<?>[] ACTIVITY = {RecyclerClickItemActivity.class, HorizontalAdjustActivity.class, VerticalAdjustActivity.class,ListActivity.class,CustomView.class,GooglePlayActivity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerview.setLayoutManager(layoutManager);
         recyclerview.addOnItemTouchListener(new OnItemClickListener() {
             @Override
-            public void SimpleOnItemClick(final BaseQuickAdapter baseQuickAdapter, final View view, final int position) {
+            public void onSimpleItemClick(final BaseQuickAdapter baseQuickAdapter, final View view, final int position) {
                 Intent intent = new Intent(MainActivity.this, ACTIVITY[position]);
                 startActivity(intent);
             }
