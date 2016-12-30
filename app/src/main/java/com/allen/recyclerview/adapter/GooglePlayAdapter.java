@@ -45,7 +45,7 @@ public class GooglePlayAdapter extends BaseQuickAdapter<News, BaseViewHolder> {
         final RecyclerView recyclerView = (RecyclerView) baseViewHolder.getView(R.id.item_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(baseViewHolder.getConvertView().getContext(),LinearLayoutManager.HORIZONTAL,false));
         recyclerView.setHasFixedSize(true);
-        HorizationAdapter   mQuickAdapter = new HorizationAdapter(baseViewHolder.getConvertView().getContext(),3);
+        HorizationAdapter   mQuickAdapter = new HorizationAdapter(baseViewHolder.getConvertView().getContext(),5, (int) (Math.random()*10));
         recyclerView.setAdapter(mQuickAdapter);
 
         recyclerView.addOnItemTouchListener(listener);
@@ -53,7 +53,7 @@ public class GooglePlayAdapter extends BaseQuickAdapter<News, BaseViewHolder> {
     final OnItemClickListener listener = new OnItemClickListener() {
         @Override
         public void onSimpleItemClick(final BaseQuickAdapter baseQuickAdapter, final View view, final int i) {
-            Log.d(TAG, "onSimpleItemClick: "+"点击了一次");
+            Log.e(TAG, "嵌套层收到点击事件: "+"点击了-次");
         }
     };
 }

@@ -1,4 +1,4 @@
-package com.allen.recyclerview;
+package com.allen.mylibrary;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.allen.recyclerview", appContext.getPackageName());
+        assertEquals("com.allen.mylibrary.test", appContext.getPackageName());
     }
 }

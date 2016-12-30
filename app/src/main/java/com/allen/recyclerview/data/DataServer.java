@@ -64,6 +64,38 @@ public class DataServer {
         }
         return list;
     }
+    public static List<News> getNews(int j) {
+        List<News> list = new ArrayList<>();
+        News news = new News("头条");
+//        list.add(news);
+//        news = new News("热点");
+//        list.add(news);
+//        news = new News("精选");
+//        list.add(news);
+//        news = new News("上海");
+//        list.add(news);
+//        news = new News("财经");
+//        list.add(news);
+//        news = new News("科技");
+//        list.add(news);
+//        news = new News("段子");
+//        list.add(news);
+//        news = new News("视频");
+//        list.add(news);
+//        news = new News("网易");
+//        list.add(news);
+//        news = new News("图片");
+//        list.add(news);
+//        news = new News("直播");
+//        list.add(news);
+//        news = new News("汽车");
+        list.add(news);
+        for (int i = 0; i < j; i++) {
+            news = new News("汽车"+i);
+            list.add(news);
+        }
+        return list;
+    }
 
     public static List<Status> addData(List list, int dataSize) {
         for (int i = 0; i < dataSize; i++) {

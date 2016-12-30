@@ -16,15 +16,12 @@ package com.allen.recyclerview.adapter;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.View;
 
 import com.allen.recyclerview.R;
 import com.allen.recyclerview.data.DataServer;
 import com.allen.recyclerview.entry.News;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.chad.library.adapter.base.listener.OnItemClickListener;
 
 import java.util.List;
 
@@ -48,12 +45,6 @@ public class GooglePlayItemAdapter extends BaseQuickAdapter<News, BaseViewHolder
         recyclerView.setHasFixedSize(true);
         GooglePlayAdapter   mQuickAdapter = new GooglePlayAdapter(DataServer.getNews());
         recyclerView.setAdapter(mQuickAdapter);
-        recyclerView.addOnItemTouchListener(new OnItemClickListener() {
-            @Override
-            public void onSimpleItemClick(final BaseQuickAdapter baseQuickAdapter, final View view, final int i) {
-                Log.d(TAG, "onSimpleItemClick: "+"点击了几次");
-            }
-        });
     }
     private void initAdapter() {
 

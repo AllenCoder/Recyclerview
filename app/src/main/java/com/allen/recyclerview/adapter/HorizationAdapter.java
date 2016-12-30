@@ -21,9 +21,13 @@ public class HorizationAdapter extends BaseQuickAdapter<News,BaseViewHolder> {
     private LayoutInflater layoutInflater;
     private int N ;
 
-
     public HorizationAdapter(Context mContex, int N) {
         super(item, DataServer.getNews());
+        this.N =N;
+        layoutInflater =LayoutInflater.from(mContex);
+    }
+    public HorizationAdapter(Context mContex, int N,int X) {
+        super(item, DataServer.getNews(X));
         this.N =N;
         layoutInflater =LayoutInflater.from(mContex);
     }
