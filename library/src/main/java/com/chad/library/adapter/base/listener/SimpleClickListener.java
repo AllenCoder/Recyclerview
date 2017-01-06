@@ -3,6 +3,7 @@ package com.chad.library.adapter.base.listener;
 import android.os.Build;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.HapticFeedbackConstants;
 import android.view.MotionEvent;
@@ -81,6 +82,12 @@ public abstract class SimpleClickListener implements RecyclerView.OnItemTouchLis
         public boolean onDown(MotionEvent e) {
             mIsPrepressed = true;
             mPressedView = recyclerView.findChildViewUnder(e.getX(), e.getY());
+            BaseViewHolder vh = (BaseViewHolder) recyclerView.getChildViewHolder(mPressedView);
+            childClickViewIds =vh.getChildClickViewIds();
+            for (Integer id :childClickViewIds
+                 ) {
+                Log.e(TAG, "onDown: id="+id+"   "+(mPressedView.findViewById(id).getVisibility()==View.VISIBLE));
+            }
 
             super.onDown(e);
             return false;
@@ -119,6 +126,7 @@ public abstract class SimpleClickListener implements RecyclerView.OnItemTouchLis
                         if (inRangeOfView(childView, e)&&childView.isEnabled()) {
                             setPressViewHotSpot(e,childView);
                             childView.setPressed(true);
+                            Log.d(TAG, "onSingleTapUp: "+childView.getId());
                             onItemChildClick(baseQuickAdapter, childView, vh.getLayoutPosition() - baseQuickAdapter.getHeaderLayoutCount());
                             resetPressedView(childView);
                             return true;
@@ -247,6 +255,7 @@ public abstract class SimpleClickListener implements RecyclerView.OnItemTouchLis
     public boolean inRangeOfView(View view, MotionEvent ev) {
         int[] location = new int[2];
         if (view.getVisibility()!=View.VISIBLE){
+            Log.d(TAG, "onSingleTapUp: "+view.getId());
             return false;
         }
         view.getLocationOnScreen(location);
@@ -258,6 +267,7 @@ public abstract class SimpleClickListener implements RecyclerView.OnItemTouchLis
                 || ev.getRawY() > (y + view.getHeight())) {
             return false;
         }
+        Log.d(TAG, "在点击范围内: "+view.getId());
         return true;
     }
 

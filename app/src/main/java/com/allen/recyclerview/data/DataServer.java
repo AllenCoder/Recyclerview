@@ -1,6 +1,7 @@
 package com.allen.recyclerview.data;
 
 
+import com.allen.recyclerview.entry.MarryInfo;
 import com.allen.recyclerview.entry.News;
 import com.allen.recyclerview.entry.Status;
 
@@ -94,6 +95,15 @@ public class DataServer {
             news = new News("汽车"+i);
             list.add(news);
         }
+        return list;
+    }
+    public static List<MarryInfo> getMarray(int j) {
+        List<MarryInfo> list = new ArrayList<>();
+        for (int i = 0; i < j; i++) {
+            MarryInfo news = new MarryInfo("小明","137****5872",true,true);
+            list.add(news);
+        }
+
         return list;
     }
 

@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
     protected RelativeLayout activityMain;
     private HomeAdapter homeAdapter;
     private List<Home> activityList;
-    private String[] activityTitle = {"RecyclerView 滚动定位", "水平调整布局", "垂直调整布局","Listview对比测试","自定义View测试","GooglePlay Demo"};
-    private Class<?>[] ACTIVITY = {RecyclerClickItemActivity.class, HorizontalAdjustActivity.class, VerticalAdjustActivity.class,ListActivity.class,CustomView.class,GooglePlayActivity.class};
+    private String[] activityTitle = {"RecyclerView 滚动定位", "水平调整布局", "垂直调整布局","Listview对比测试","自定义View测试","GooglePlay Demo","显示隐藏"};
+    private Class<?>[] ACTIVITY = {RecyclerClickItemActivity.class, HorizontalAdjustActivity.class, VerticalAdjustActivity.class,ListActivity.class,CustomView.class,GooglePlayActivity.class,HideActivity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
