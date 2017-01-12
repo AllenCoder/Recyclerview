@@ -60,6 +60,13 @@ public class GooglePlayActivity extends AppCompatActivity {
             public void onSimpleItemClick(final BaseQuickAdapter baseQuickAdapter, final View view, final int i) {
                 Log.d(TAG, "onSimpleItemClick: "+"父层item收到点击事件");
             }
-        });
+
+                                                                 @Override
+                                                                 public void onItemChildClick(final BaseQuickAdapter adapter, final View view, final int position) {
+                                                                     super.onItemChildClick(adapter, view, position);
+                                                                     Log.d(TAG, "onSimpleItemClick: "+"父层onItemChildClick收到点击事件");
+                                                                 }
+                                                             }
+        );
     }
 }

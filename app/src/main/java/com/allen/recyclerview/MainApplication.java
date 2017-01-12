@@ -16,6 +16,9 @@ package com.allen.recyclerview;
 
 import android.app.Application;
 
+import com.orhanobut.logger.LogLevel;
+import com.orhanobut.logger.Logger;
+
 /**
  * 文 件 名: MainApplication
  * 创 建 人: Allen
@@ -31,5 +34,12 @@ public class MainApplication extends Application {
     public void onCreate() {
         super.onCreate();
         com.wanjian.sak.LayoutManager.init(this);
+        Logger
+                .init("MainApplication")                 // default PRETTYLOGGER or use just init()
+                .methodCount(3)                 // default 2
+                .hideThreadInfo()               // default shown
+                .logLevel(LogLevel.FULL)        // default LogLevel.FULL
+                .methodOffset(2)                // default 0
+                ; //default AndroidLogAdapter
     }
 }

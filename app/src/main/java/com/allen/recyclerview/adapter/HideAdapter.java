@@ -41,12 +41,12 @@ public class HideAdapter extends BaseQuickAdapter<MarryInfo, BaseViewHolder> {
         addOnClickListener(R.id.tv_repeat).
                 addOnClickListener(R.id.tv_valid).
                 addOnClickListener(R.id.tv_invalid)
-                .setVisible(R.id.ly_a, item.isShow)
-                .setVisible(R.id.ly_b, !item.isShow)
-                .setVisible(R.id.tv_unrepeat, item.isShow)
-                .setVisible(R.id.tv_repeat, item.isShow)
-                .setVisible(R.id.tv_valid, !item.isShow)
-                .setVisible(R.id.tv_invalid, !item.isShow)
+//                .setVisible(R.id.ly_a, item.isShow)
+//                .setVisible(R.id.ly_b, !item.isShow)
+//                .setVisible(R.id.tv_unrepeat, item.isShow)
+//                .setVisible(R.id.tv_repeat, item.isShow)
+//                .setVisible(R.id.tv_valid, !item.isShow)
+//                .setVisible(R.id.tv_invalid, !item.isShow)
                 .setText(R.id.tv_name, item.getName())
                 .setText(R.id.tv_phone, item.getPhone());
 

@@ -36,6 +36,7 @@ public class HorizationAdapter extends BaseQuickAdapter<News,BaseViewHolder> {
     @Override
     protected void convert(final BaseViewHolder newsViewHolder, final News news) {
         newsViewHolder.setText(R.id.tv_title,news.title);
+//        newsViewHolder.addOnClickListener(R.id.btn_go);
     }
     @Override
     protected View getItemView(final int layoutResId, final ViewGroup parent) {

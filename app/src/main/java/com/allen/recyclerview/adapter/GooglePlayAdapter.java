@@ -20,6 +20,8 @@ import android.util.Log;
 import android.view.View;
 
 import com.allen.recyclerview.R;
+import com.allen.recyclerview.data.DataServer;
+import com.allen.recyclerview.entry.MarryInfo;
 import com.allen.recyclerview.entry.News;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -43,17 +45,25 @@ public class GooglePlayAdapter extends BaseQuickAdapter<News, BaseViewHolder> {
     @Override
     protected void convert(final BaseViewHolder baseViewHolder, final News news) {
         final RecyclerView recyclerView = (RecyclerView) baseViewHolder.getView(R.id.item_recyclerview);
-        recyclerView.setLayoutManager(new LinearLayoutManager(baseViewHolder.getConvertView().getContext(),LinearLayoutManager.HORIZONTAL,false));
+        recyclerView.setLayoutManager(new LinearLayoutManager(baseViewHolder.getConvertView().getContext(),LinearLayoutManager.VERTICAL,false));
         recyclerView.setHasFixedSize(true);
-        HorizationAdapter   mQuickAdapter = new HorizationAdapter(baseViewHolder.getConvertView().getContext(),5, (int) (Math.random()*10));
+//        HorizationAdapter   mQuickAdapter = new HorizationAdapter(baseViewHolder.getConvertView().getContext(),5, (int) (Math.random()*10));
+        final List<MarryInfo> marray = DataServer.getMarray(10);
+        final HideAdapter mQuickAdapter = new HideAdapter(marray);
         recyclerView.setAdapter(mQuickAdapter);
-
+        baseViewHolder.addOnClickListener(R.id.item_recyclerview);
         recyclerView.addOnItemTouchListener(listener);
     }
     final OnItemClickListener listener = new OnItemClickListener() {
         @Override
         public void onSimpleItemClick(final BaseQuickAdapter baseQuickAdapter, final View view, final int i) {
             Log.e(TAG, "嵌套层收到点击事件: "+"点击了-次");
+        }
+
+        @Override
+        public void onItemChildClick(final BaseQuickAdapter adapter, final View view, final int position) {
+            super.onItemChildClick(adapter, view, position);
+            Log.e(TAG, "嵌套层ItemChild点击事件: "+"点击了-次");
         }
     };
 }

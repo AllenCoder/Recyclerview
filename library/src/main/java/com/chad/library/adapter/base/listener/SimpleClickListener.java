@@ -86,7 +86,7 @@ public abstract class SimpleClickListener implements RecyclerView.OnItemTouchLis
             childClickViewIds =vh.getChildClickViewIds();
             for (Integer id :childClickViewIds
                  ) {
-                Log.e(TAG, "onDown: id="+id+"   "+(mPressedView.findViewById(id).getVisibility()==View.VISIBLE));
+                Log.e(TAG, "onDown: id="+id+"   可见吗？"+(mPressedView.findViewById(id).isShown()));
             }
 
             super.onDown(e);
@@ -254,8 +254,8 @@ public abstract class SimpleClickListener implements RecyclerView.OnItemTouchLis
 
     public boolean inRangeOfView(View view, MotionEvent ev) {
         int[] location = new int[2];
-        if (view.getVisibility()!=View.VISIBLE){
-            Log.d(TAG, "onSingleTapUp: "+view.getId());
+        if (!view.isShown()){
+            Log.d(TAG, "不在可见范围内: "+view.getId());
             return false;
         }
         view.getLocationOnScreen(location);

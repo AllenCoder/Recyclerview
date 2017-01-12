@@ -1,2 +1,1 @@
-include ':app', ':app-release',':library',':mylibrary'
-project(':library').projectDir = new File('/Users/allen/GitHub/Recyclerview/library')
+include ':app', ':app-release',  ':mylibrary', ':library-release',":library"
