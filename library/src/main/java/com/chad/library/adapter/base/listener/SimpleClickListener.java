@@ -15,6 +15,8 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import java.util.Iterator;
 import java.util.Set;
 
+import hugo.weaving.DebugLog;
+
 import static com.chad.library.adapter.base.BaseQuickAdapter.EMPTY_VIEW;
 import static com.chad.library.adapter.base.BaseQuickAdapter.FOOTER_VIEW;
 import static com.chad.library.adapter.base.BaseQuickAdapter.HEADER_VIEW;
@@ -84,10 +86,10 @@ public abstract class SimpleClickListener implements RecyclerView.OnItemTouchLis
             mPressedView = recyclerView.findChildViewUnder(e.getX(), e.getY());
             BaseViewHolder vh = (BaseViewHolder) recyclerView.getChildViewHolder(mPressedView);
             childClickViewIds =vh.getChildClickViewIds();
-            for (Integer id :childClickViewIds
-                 ) {
-                Log.e(TAG, "onDown: id="+id+"   可见吗？"+(mPressedView.findViewById(id).isShown()));
-            }
+//            for (Integer id :childClickViewIds
+//                 ) {
+//                Log.e(TAG, "onDown: id="+id+"   可见吗？"+(mPressedView.findViewById(id).isShown()));
+//            }
 
             super.onDown(e);
             return false;
@@ -105,7 +107,7 @@ public abstract class SimpleClickListener implements RecyclerView.OnItemTouchLis
         public ItemTouchHelperGestureListener(RecyclerView recyclerView) {
             this.recyclerView = recyclerView;
         }
-
+        @DebugLog
         @Override
         public boolean onSingleTapUp(MotionEvent e) {
             if (mIsPrepressed && mPressedView != null) {
@@ -126,7 +128,6 @@ public abstract class SimpleClickListener implements RecyclerView.OnItemTouchLis
                         if (inRangeOfView(childView, e)&&childView.isEnabled()) {
                             setPressViewHotSpot(e,childView);
                             childView.setPressed(true);
-                            Log.d(TAG, "onSingleTapUp: "+childView.getId());
                             onItemChildClick(baseQuickAdapter, childView, vh.getLayoutPosition() - baseQuickAdapter.getHeaderLayoutCount());
                             resetPressedView(childView);
                             return true;
@@ -267,7 +268,6 @@ public abstract class SimpleClickListener implements RecyclerView.OnItemTouchLis
                 || ev.getRawY() > (y + view.getHeight())) {
             return false;
         }
-        Log.d(TAG, "在点击范围内: "+view.getId());
         return true;
     }
 

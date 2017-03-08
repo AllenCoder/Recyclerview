@@ -1,0 +1,214 @@
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/touch_bg"
+    android:clickable="true"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button"
+            style="@style/button_style_item"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/button_style_item"
+            android:text="button2" />
+
+        <Button
+            android:id="@+id/button3"
+            style="@style/button_style_item"
+            android:text="button3" />
+
+        <Button
+            android:id="@+id/button4"
+            style="@style/button_style_item"
+            android:text="button4" />
+
+        <Button
+            android:id="@+id/button5"
+            style="@style/button_style_item"
+            android:text="button5" />
+
+        <Button
+            android:id="@+id/button6"
+            style="@style/button_style_item"
+            android:text="button6" />
+
+        <Button
+            android:id="@+id/button7"
+            style="@style/button_style_item"
+            android:text="button7" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button8"
+            style="@style/button_style_item"
+            android:text="button8" />
+
+        <Button
+            android:id="@+id/button9"
+            style="@style/button_style_item"
+            android:text="button9" />
+
+        <Button
+            android:id="@+id/button10"
+            style="@style/button_style_item"
+            android:text="button10" />
+
+        <Button
+            android:id="@+id/button11"
+            style="@style/button_style_item"
+            android:text="button11" />
+
+        <Button
+            android:id="@+id/button12"
+            style="@style/button_style_item"
+            android:text="button12" />
+
+        <Button
+            android:id="@+id/button13"
+            style="@style/button_style_item"
+            android:text="button13" />
+
+        <Button
+            android:id="@+id/button14"
+            style="@style/button_style_item"
+            android:text="button14" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button15"
+            style="@style/button_style_item"
+            android:text="Button15" />
+
+        <Button
+            android:id="@+id/button16"
+            style="@style/button_style_item"
+            android:text="Button16" />
+
+        <Button
+            android:id="@+id/button17"
+            style="@style/button_style_item"
+            android:text="Button17" />
+
+        <Button
+            android:id="@+id/button18"
+            style="@style/button_style_item"
+            android:text="Button18" />
+
+        <Button
+            android:id="@+id/button19"
+            style="@style/button_style_item"
+            android:text="Button19" />
+
+        <Button
+            android:id="@+id/button20"
+            style="@style/button_style_item"
+            android:text="Button20" />
+
+        <Button
+            android:id="@+id/button21"
+            style="@style/button_style_item"
+            android:text="Button21" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button22"
+            style="@style/button_style_item"
+            android:text="Button22" />
+
+        <Button
+            android:id="@+id/button23"
+            style="@style/button_style_item"
+            android:text="Button24" />
+
+        <Button
+            android:id="@+id/button25"
+            style="@style/button_style_item"
+            android:text="Button25" />
+
+        <Button
+            android:id="@+id/button26"
+            style="@style/button_style_item"
+            android:text="Button26" />
+
+        <Button
+            android:id="@+id/button27"
+            style="@style/button_style_item"
+            android:text="Button27" />
+
+        <Button
+            android:id="@+id/button28"
+            style="@style/button_style_item"
+            android:text="button28" />
+
+        <Button
+            android:id="@+id/button29"
+            style="@style/button_style_item"
+            android:text="button29" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button30"
+            style="@style/button_style_item"
+            android:text="button30" />
+
+        <Button
+            android:id="@+id/button31"
+            style="@style/button_style_item"
+            android:text="button31" />
+
+        <Button
+            android:id="@+id/button32"
+            style="@style/button_style_item"
+            android:text="button32" />
+
+        <Button
+            android:id="@+id/button33"
+            style="@style/button_style_item"
+            android:text="button33" />
+
+        <Button
+            android:id="@+id/button34"
+            style="@style/button_style_item"
+            android:text="button34" />
+
+        <Button
+            android:id="@+id/button35"
+            style="@style/button_style_item"
+            android:text="button35" />
+
+        <Button
+            android:id="@+id/button36"
+            style="@style/button_style_item"
+            android:text="button36" />
+    </LinearLayout>
+</LinearLayout>
