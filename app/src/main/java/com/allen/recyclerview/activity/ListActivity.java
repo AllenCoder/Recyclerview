@@ -1,7 +1,10 @@
 package com.allen.recyclerview.activity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,22 +58,30 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(final AdapterView<?> parent, final View view, final int position, final long id) {
 //                view.setPressed(true);
-                view.findViewById(R.id.tv).setPressed(true);
+                Log.d(TAG, "onItemClick: ");
+//                view.findViewById(R.id.tv).setPressed(true);
+
+                String movieurl="http://xxx.xxx.xx.xx:8080/play/test.mp4";//在线视频地址
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                String type = "video/mpeg";//视频类型
+                Uri uri = Uri.parse(movieurl);
+                intent.setDataAndType(uri, type);
+                startActivity(intent);
             }
         });
 
 
 
 
-        ly.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View v) {
-                Logger.d(TAG, "onResume: "+(isShown(ly_a)));
-                Logger.d(TAG, "onResume: "+(isShown(ly_a)));
-                Logger.d(TAG, "onResume: "+(isShown(tv_valid)));
-                Logger.d(TAG, "onResume: "+(tv_invalid.isShown()));
-            }
-        });
+//        ly.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(final View v) {
+//                Logger.d(TAG, "onResume: "+(isShown(ly_a)));
+//                Logger.d(TAG, "onResume: "+(isShown(ly_a)));
+//                Logger.d(TAG, "onResume: "+(isShown(tv_valid)));
+//                Logger.d(TAG, "onResume: "+(tv_invalid.isShown()));
+//            }
+//        });
     }
 
     @Override
@@ -179,59 +190,59 @@ public class ListActivity extends AppCompatActivity {
                 holder.ly_b.setVisibility(VISIBLE);
             }
             final ViewHolder finalHolder = holder;
-            holder.tv_unrepeat.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(final View v) {
-
-                    Logger.e(TAG, "onClick: " + finalHolder.tv_unrepeat.getId()+"可见吗？ " + "" + (finalHolder.tv_unrepeat.isShown()));
-                    Logger.e(TAG, "onClick: " + finalHolder.tv_repeat.getId()+"可见吗？ " + "" + (finalHolder.tv_repeat.isShown()));
-                    Logger.e(TAG, "onClick: " + finalHolder.tv_invalid.getId()+"可见吗？ " + "" + (finalHolder.tv_invalid.isShown()));
-                    Logger.e(TAG, "onClick: " + finalHolder.tv_valid.getId() +"可见吗？ "+ "" + (finalHolder.tv_valid.isShown()));
-
-                    infoList.get(position).isShow = false;
-                    notifyDataSetChanged();
-                }
-            });
-
-            holder.tv_repeat.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(final View v) {
-
-                    Logger.e(TAG, "onClick: " + finalHolder.tv_unrepeat.getId()+"可见吗？ " + "" + (finalHolder.tv_unrepeat.isShown()));
-                    Logger.e(TAG, "onClick: " + finalHolder.tv_repeat.getId()+"可见吗？ " + "" + (finalHolder.tv_repeat.isShown()));
-                    Logger.e(TAG, "onClick: " + finalHolder.tv_invalid.getId()+"可见吗？ " + "" + (finalHolder.tv_invalid.isShown()));
-                    Logger.e(TAG, "onClick: " + finalHolder.tv_valid.getId() +"可见吗？ "+ "" + (finalHolder.tv_valid.isShown()));
-
-                    infoList.get(position).isShow = false;
-                    notifyDataSetChanged();
-                }
-            });
-            holder.tv_valid.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(final View v) {
-
-                    Logger.e(TAG, "onClick: " + finalHolder.tv_unrepeat.getId()+"可见吗？ " + "" + (finalHolder.tv_unrepeat.isShown()));
-                    Logger.e(TAG, "onClick: " + finalHolder.tv_repeat.getId()+"可见吗？ " + "" + (finalHolder.tv_repeat.isShown()));
-                    Logger.e(TAG, "onClick: " + finalHolder.tv_invalid.getId()+"可见吗？ " + "" + (finalHolder.tv_invalid.isShown()));
-                    Logger.e(TAG, "onClick: " + finalHolder.tv_valid.getId() +"可见吗？ "+ "" + (finalHolder.tv_valid.isShown()));
-
-                    infoList.get(position).isShow = true;
-                    notifyDataSetChanged();
-                }
-            });
-            holder.tv_invalid.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(final View v) {
-
-                    Logger.e(TAG, "onClick: " + finalHolder.tv_unrepeat.getId()+"可见吗？ " + "" + (finalHolder.tv_unrepeat.isShown()));
-                    Logger.e(TAG, "onClick: " + finalHolder.tv_repeat.getId()+"可见吗？ " + "" + (finalHolder.tv_repeat.isShown()));
-                    Logger.e(TAG, "onClick: " + finalHolder.tv_invalid.getId()+"可见吗？ " + "" + (finalHolder.tv_invalid.isShown()));
-                    Logger.e(TAG, "onClick: " + finalHolder.tv_valid.getId() +"可见吗？ "+ "" + (finalHolder.tv_valid.isShown()));
-
-                    infoList.get(position).isShow = true;
-                    notifyDataSetChanged();
-                }
-            });
+//            holder.tv_unrepeat.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(final View v) {
+//
+//                    Logger.e(TAG, "onClick: " + finalHolder.tv_unrepeat.getId()+"可见吗？ " + "" + (finalHolder.tv_unrepeat.isShown()));
+//                    Logger.e(TAG, "onClick: " + finalHolder.tv_repeat.getId()+"可见吗？ " + "" + (finalHolder.tv_repeat.isShown()));
+//                    Logger.e(TAG, "onClick: " + finalHolder.tv_invalid.getId()+"可见吗？ " + "" + (finalHolder.tv_invalid.isShown()));
+//                    Logger.e(TAG, "onClick: " + finalHolder.tv_valid.getId() +"可见吗？ "+ "" + (finalHolder.tv_valid.isShown()));
+//
+//                    infoList.get(position).isShow = false;
+//                    notifyDataSetChanged();
+//                }
+//            });
+//
+//            holder.tv_repeat.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(final View v) {
+//
+//                    Logger.e(TAG, "onClick: " + finalHolder.tv_unrepeat.getId()+"可见吗？ " + "" + (finalHolder.tv_unrepeat.isShown()));
+//                    Logger.e(TAG, "onClick: " + finalHolder.tv_repeat.getId()+"可见吗？ " + "" + (finalHolder.tv_repeat.isShown()));
+//                    Logger.e(TAG, "onClick: " + finalHolder.tv_invalid.getId()+"可见吗？ " + "" + (finalHolder.tv_invalid.isShown()));
+//                    Logger.e(TAG, "onClick: " + finalHolder.tv_valid.getId() +"可见吗？ "+ "" + (finalHolder.tv_valid.isShown()));
+//
+//                    infoList.get(position).isShow = false;
+//                    notifyDataSetChanged();
+//                }
+//            });
+//            holder.tv_valid.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(final View v) {
+//
+//                    Logger.e(TAG, "onClick: " + finalHolder.tv_unrepeat.getId()+"可见吗？ " + "" + (finalHolder.tv_unrepeat.isShown()));
+//                    Logger.e(TAG, "onClick: " + finalHolder.tv_repeat.getId()+"可见吗？ " + "" + (finalHolder.tv_repeat.isShown()));
+//                    Logger.e(TAG, "onClick: " + finalHolder.tv_invalid.getId()+"可见吗？ " + "" + (finalHolder.tv_invalid.isShown()));
+//                    Logger.e(TAG, "onClick: " + finalHolder.tv_valid.getId() +"可见吗？ "+ "" + (finalHolder.tv_valid.isShown()));
+//
+//                    infoList.get(position).isShow = true;
+//                    notifyDataSetChanged();
+//                }
+//            });
+//            holder.tv_invalid.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(final View v) {
+//
+//                    Logger.e(TAG, "onClick: " + finalHolder.tv_unrepeat.getId()+"可见吗？ " + "" + (finalHolder.tv_unrepeat.isShown()));
+//                    Logger.e(TAG, "onClick: " + finalHolder.tv_repeat.getId()+"可见吗？ " + "" + (finalHolder.tv_repeat.isShown()));
+//                    Logger.e(TAG, "onClick: " + finalHolder.tv_invalid.getId()+"可见吗？ " + "" + (finalHolder.tv_invalid.isShown()));
+//                    Logger.e(TAG, "onClick: " + finalHolder.tv_valid.getId() +"可见吗？ "+ "" + (finalHolder.tv_valid.isShown()));
+//
+//                    infoList.get(position).isShow = true;
+//                    notifyDataSetChanged();
+//                }
+//            });
 
 
             return convertView;

@@ -78,6 +78,7 @@ public class OptimizeItem2ClickActivity extends AppCompatActivity {
     private void initAdapter() {
         mQuickAdapter = new OptimeizeClickAdapter(PAGE_SIZE);
         mQuickAdapter.openLoadAnimation();
+        mQuickAdapter.notifyItemChanged(1,1);
         mRecyclerView.setAdapter(mQuickAdapter);
     }
 }

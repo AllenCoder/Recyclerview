@@ -23,18 +23,19 @@
         <activity android:name=".activity.RecyclerClickItemActivity" />
         <activity android:name=".activity.VerticalAdjustActivity" />
         <activity android:name=".activity.HorizontalAdjustActivity" />
-        <activity android:name=".activity.ListActivity"></activity>
-        <activity android:name=".activity.CustomView"></activity>
-        <activity android:name=".activity.GooglePlayActivity"></activity>
-        <activity android:name=".activity.HideActivity"></activity>
+        <activity android:name=".activity.ListActivity" />
+        <activity android:name=".activity.CustomView" />
+        <activity android:name=".activity.GooglePlayActivity" />
+        <activity android:name=".activity.HideActivity" />
         <activity
             android:name=".activity.OptimizeItemClickActivity"
             android:label="@string/title_activity_optimize_item_click"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.OptimizeItem2ClickActivity"
             android:label="@string/title_activity_optimize_item_click"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.LocalRefreshActivity"></activity>
     </application>
 
 </manifest>

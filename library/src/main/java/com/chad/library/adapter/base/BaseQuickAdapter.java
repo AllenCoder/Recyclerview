@@ -624,6 +624,29 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
         this.mSpanSizeLookup = spanSizeLookup;
     }
 
+    @Override
+    public void onBindViewHolder(K holder, int position, List<Object> payloads) {
+        int viewType = holder.getItemViewType();
+
+        switch (viewType) {
+            case 0:
+                convert(holder, mData.get(holder.getLayoutPosition() - getHeaderLayoutCount()));
+                break;
+            case LOADING_VIEW:
+                mLoadMoreView.convert(holder);
+                break;
+            case HEADER_VIEW:
+                break;
+            case EMPTY_VIEW:
+                break;
+            case FOOTER_VIEW:
+                break;
+            default:
+                convert(holder, mData.get(holder.getLayoutPosition() - getHeaderLayoutCount()));
+                break;
+        }
+    }
+
     /**
      * To bind different types of holder and solve different the bind events
      *
@@ -653,6 +676,8 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
                 break;
         }
     }
+
+
 
     protected K onCreateDefViewHolder(ViewGroup parent, int viewType) {
         return createBaseViewHolder(parent, mLayoutResId);
@@ -1095,6 +1120,8 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
      * @param item   The item that needs to be displayed.
      */
     protected abstract void convert(K helper, T item);
+
+
 
     /**
      * Get the row id associated with the specified position in the list.

@@ -24,7 +24,7 @@
             android:textSize="18sp"
             android:id="@+id/tv_phone"
             android:text="手机：189****1113"/>
-    
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
