@@ -36,7 +36,7 @@ public class MainApplication extends Application {
         com.wanjian.sak.LayoutManager.init(this);
         Logger
                 .init("MainApplication")                 // default PRETTYLOGGER or use just init()
-                .methodCount(3)                 // default 2
+                .methodCount(1)                 // default 2
                 .hideThreadInfo()               // default shown
                 .logLevel(LogLevel.FULL)        // default LogLevel.FULL
                 .methodOffset(2)                // default 0
