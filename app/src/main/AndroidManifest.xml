@@ -35,7 +35,8 @@
             android:name=".activity.OptimizeItem2ClickActivity"
             android:label="@string/title_activity_optimize_item_click"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.LocalRefreshActivity"></activity>
+        <activity android:name=".activity.LocalRefreshActivity" />
+        <activity android:name=".activity.RotateActivity"></activity>
     </application>
 
 </manifest>
