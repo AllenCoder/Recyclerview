@@ -26,7 +26,6 @@ import com.allen.recyclerview.R;
 import com.allen.recyclerview.adapter.GooglePlayAdapter;
 import com.allen.recyclerview.data.DataServer;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.listener.OnItemClickListener;
 
 /**
  * 文 件 名: GooglePlayActivity
@@ -38,6 +37,7 @@ import com.chad.library.adapter.base.listener.OnItemClickListener;
  */
 public class GooglePlayActivity extends AppCompatActivity {
     private RecyclerView mRootRecyclerviewRecyclerView;
+    private String TAG="GooglePlayActivity";
 
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
@@ -55,18 +55,24 @@ public class GooglePlayActivity extends AppCompatActivity {
         GooglePlayAdapter   mQuickAdapter = new GooglePlayAdapter(DataServer.getNews());
         mQuickAdapter.openLoadAnimation();
         mRootRecyclerviewRecyclerView.setAdapter(mQuickAdapter);
-        mRootRecyclerviewRecyclerView.addOnItemTouchListener(new OnItemClickListener() {
+        mQuickAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
-            public void onSimpleItemClick(final BaseQuickAdapter baseQuickAdapter, final View view, final int i) {
-                Log.d(TAG, "onSimpleItemClick: "+"父层item收到点击事件");
+            public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+                Log.d(TAG, "onSimpleItemClick: "+"父层onItemChildClick收到点击事件");
             }
-
-                                                                 @Override
-                                                                 public void onItemChildClick(final BaseQuickAdapter adapter, final View view, final int position) {
-                                                                     super.onItemChildClick(adapter, view, position);
-                                                                     Log.d(TAG, "onSimpleItemClick: "+"父层onItemChildClick收到点击事件");
-                                                                 }
-                                                             }
-        );
+        });
+//        mRootRecyclerviewRecyclerView.addOnItemTouchListener(new OnItemClickListener() {
+//            @Override
+//            public void onSimpleItemClick(final BaseQuickAdapter baseQuickAdapter, final View view, final int i) {
+//                Log.d(TAG, "onSimpleItemClick: "+"父层item收到点击事件");
+//            }
+//
+//                                                                 @Override
+//                                                                 public void onItemChildClick(final BaseQuickAdapter adapter, final View view, final int position) {
+//                                                                     super.onItemChildClick(adapter, view, position);
+//                                                                     Log.d(TAG, "onSimpleItemClick: "+"父层onItemChildClick收到点击事件");
+//                                                                 }
+//                                                             }
+//        );
     }
 }

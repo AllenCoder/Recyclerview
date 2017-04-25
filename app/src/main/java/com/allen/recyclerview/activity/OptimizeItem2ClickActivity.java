@@ -8,12 +8,11 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
 
 import com.allen.recyclerview.R;
 import com.allen.recyclerview.adapter.OptimeizeClickAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.listener.OnItemClickListener;
-import com.orhanobut.logger.Logger;
 
 public class OptimizeItem2ClickActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
@@ -43,36 +42,36 @@ public class OptimizeItem2ClickActivity extends AppCompatActivity {
 //         * Item  clcik
 //         */
 //
-        mRecyclerView.addOnItemTouchListener(new OnItemClickListener() {
-
-            @Override
-            public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
-            }
-
-            @Override
-            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                Logger.d("当前时间  "+System.currentTimeMillis());
-                super.onItemChildClick(adapter, view, position);
-                switch (view.getId()) {
-
-                    default:
-                        break;
-                }
-            }
-
-
-            @Override
-            public void onItemLongClick(BaseQuickAdapter adapter, View view, int position) {
-                super.onItemLongClick(adapter, view, position);
-
-            }
-
-            @Override
-            public void onItemChildLongClick(BaseQuickAdapter adapter, View view, int position) {
-                super.onItemChildLongClick(adapter, view, position);
-
-            }
-        });
+//        mRecyclerView.addOnItemTouchListener(new OnItemClickListener() {
+//
+//            @Override
+//            public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
+//            }
+//
+//            @Override
+//            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+//                Logger.d("当前时间  "+System.currentTimeMillis());
+//                super.onItemChildClick(adapter, view, position);
+//                switch (view.getId()) {
+//
+//                    default:
+//                        break;
+//                }
+//            }
+//
+//
+//            @Override
+//            public void onItemLongClick(BaseQuickAdapter adapter, View view, int position) {
+//                super.onItemLongClick(adapter, view, position);
+//
+//            }
+//
+//            @Override
+//            public void onItemChildLongClick(BaseQuickAdapter adapter, View view, int position) {
+//                super.onItemChildLongClick(adapter, view, position);
+//
+//            }
+//        });
     }
 
     private void initAdapter() {
@@ -80,5 +79,31 @@ public class OptimizeItem2ClickActivity extends AppCompatActivity {
         mQuickAdapter.openLoadAnimation();
         mQuickAdapter.notifyItemChanged(1,1);
         mRecyclerView.setAdapter(mQuickAdapter);
+        mQuickAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+                Toast.makeText(OptimizeItem2ClickActivity.this,"onItemClick",Toast.LENGTH_SHORT).show();
+            }
+        });
+        mQuickAdapter.setOnItemLongClickListener(new BaseQuickAdapter.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+                Toast.makeText(OptimizeItem2ClickActivity.this,"onItemLongClick",Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
+        mQuickAdapter.setOnItemChildLongClickListener(new BaseQuickAdapter.OnItemChildLongClickListener() {
+            @Override
+            public boolean onItemChildLongClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+                Toast.makeText(OptimizeItem2ClickActivity.this,"onItemChildLongClick",Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
+        mQuickAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+                Toast.makeText(OptimizeItem2ClickActivity.this,"onItemChildClick",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

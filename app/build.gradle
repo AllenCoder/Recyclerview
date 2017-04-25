@@ -24,7 +24,8 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     //        compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.7.0'
     compile project(':app-release')
-    compile project(':library')
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.13'
+//    compile project(':library')
     //    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.7.8'
     //    compile project(':library-release')
     // Because RxAndroid releases are few and far between, it is recommended you also

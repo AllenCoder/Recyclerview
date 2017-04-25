@@ -12,7 +12,6 @@ import com.allen.recyclerview.R;
 import com.allen.recyclerview.adapter.HomeAdapter;
 import com.allen.recyclerview.entry.Home;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.listener.OnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,9 +35,16 @@ public class MainActivity extends AppCompatActivity {
         initAdapter();
         recyclerview.setAdapter(homeAdapter);
         recyclerview.setLayoutManager(layoutManager);
-        recyclerview.addOnItemTouchListener(new OnItemClickListener() {
+//        recyclerview.addOnItemTouchListener(new OnItemClickListener() {
+//            @Override
+//            public void onSimpleItemClick(final BaseQuickAdapter baseQuickAdapter, final View view, final int position) {
+//                Intent intent = new Intent(MainActivity.this, ACTIVITY[position]);
+//                startActivity(intent);
+//            }
+//        });
+        homeAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
-            public void onSimpleItemClick(final BaseQuickAdapter baseQuickAdapter, final View view, final int position) {
+            public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
                 Intent intent = new Intent(MainActivity.this, ACTIVITY[position]);
                 startActivity(intent);
             }
